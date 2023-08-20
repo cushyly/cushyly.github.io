@@ -1,2 +1,1 @@
-# cushyly.github.io
-Cushyly Website Code
+# theravemedia.github.io
