@@ -474,6 +474,7 @@
    document.getElementById('contactForm').addEventListener('submit', function(event) {
        event.preventDefault();
        emailjs.sendForm('cushyly', 'template_bwly55i', this)
+	   location.reload()
        .then(function(response) {
           console.log('SUCCESS!', response.status, response.text);
        }, function(error) {
