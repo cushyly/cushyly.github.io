@@ -426,8 +426,7 @@
 				</div>
 				<div class="col-md-4 to-animate">
 					<h3 class="section-title">Drop us your queries, your thoughts or just how your day was.<br> We're just happy to hear from you </h3>
-					<form class="contact-form" action="send_email.php"
-					method="POST">
+					<form id="contactForm" class="contact-form" >
 						<div class="form-group">
 							<label for="name" class="sr-only">Name</label>
 							<input type="name" name="name" class="form-control" id="name" placeholder="Name">
@@ -465,6 +464,23 @@
 	<script src="js/jquery.countTo.js"></script>
 	<!-- Main JS (Do not remove) -->
 	<script src="js/main.js"></script>
+
+	<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+   (function(){
+      emailjs.init("CzJ1mmWFuMvDww5z4");
+   })();
+   
+   document.getElementById('contactForm').addEventListener('submit', function(event) {
+       event.preventDefault();
+       emailjs.sendForm('cushyly', 'template_bwly55i', this)
+       .then(function(response) {
+          console.log('SUCCESS!', response.status, response.text);
+       }, function(error) {
+          console.log('FAILED...', error);
+       });
+   });
+</script>
 
 	</body>
 </html>
