@@ -79,5 +79,85 @@
                 </div>
             </div>
         </section>
+
+        <div id="fh5co-footer" role="contentinfo">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 to-animate">
+                        <h3 class="section-title">About Us</h3>
+                        <p>Welcome to Cushyly, where innovation and expertise collide to fuel your business growth! As your trusted Salesforce partner, we're not just about solutions; we're about driving revolutions.</p>
+                        <p class="copy-right">&copy; 2024 Cushyly. <br>All Rights Reserved. <br>
+                            Designed by: Manu</a>
+                        </p>
+                        <p>
+                            <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms of Service</a>
+                        </p>
+                    </div>
+
+                    <div class="col-md-4 to-animate">
+                        <h3 class="section-title">Contact Us</h3>
+                        <ul class="contact-info">
+                            <li><i class="icon-phone"></i>+91 9943311436</li>
+                            <li><i class="icon-envelope"></i><a href="#">care@cushyly.com</a></li>
+                            <li><i class="icon-globe2"></i><a href="https://www.cushyly.com">cushyly.com</a></li>
+                        </ul>
+                        <h3 class="section-title">Connect with Us</h3>
+                        <ul class="social-media">
+                            <li><a href="https://www.instagram.com/cushyly/" class="instagram"><i class="icon-instagram"></i></a></li>
+                            <li><a href="https://www.facebook.com/profile.php?id=100092237963086" class="facebook"><i class="icon-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/cushyly" class="twitter"><i class="icon-twitter"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 to-animate">
+                        <h3 class="section-title">Drop us your queries</h3>
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-group">
+                                <input type="name" name="name" class="form-control" id="name" placeholder="Name">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" class="form-control" id="email" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" name="message" id="message" rows="7" placeholder="Message"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" id="btn-submit" class="btn btn-send-message btn-md" value="Send Message">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- jQuery -->
+        <script src="js/jquery.min.js"></script>
+        <!-- jQuery Easing -->
+        <script src="js/jquery.easing.1.3.js"></script>
+        <!-- Bootstrap -->
+        <script src="js/bootstrap.min.js"></script>
+        <!-- Waypoints -->
+        <script src="js/jquery.waypoints.min.js"></script>
+        <!-- Stellar Parallax -->
+        <script src="js/jquery.stellar.min.js"></script>
+        <!-- Main JS -->
+        <script src="js/main.js"></script>
+        <!-- EmailJS -->
+        <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+        <script>
+            (function(){
+                emailjs.init("CzJ1mmWFuMvDww5z4");
+            })();
+            
+            document.getElementById('contactForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                emailjs.sendForm('cushyly', 'template_bwly55i', this)
+                location.reload()
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                }, function(error) {
+                    console.log('FAILED...', error);
+                });
+            });
+        </script>
     </body>
 </html>
